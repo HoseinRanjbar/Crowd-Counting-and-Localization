@@ -1,10 +1,8 @@
-# Crowd Counting 
----
-This implementation is written by Hosein Ranjbar
+# Crowd Counting and Localization for Surveillance Videos
 
 ### Introduction
 ---
-This project is an implementation of the crowd counting method proposed in ICCV2021 Oral Presentation
+This project is an implementation of the crowd counting method.
 
 The overall architecture of the P2PNet. Built upon the VGG16, it firstly introduce an upsampling path to obtain fine-grained feature map. Then it exploits two branches to simultaneously predict a set of point proposals and their confidence scores.
 
