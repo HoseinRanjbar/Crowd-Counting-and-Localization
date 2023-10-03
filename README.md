@@ -59,11 +59,8 @@ To extract heatmap, please run the following commands:
 A sample of heatmap is provided in below:
 
 <p align="center">
-  <img src="images/heatmap.jpg" width="1000">
+  <img src="images/heatmap.png" width="1200">
 </p>
-
-Backbone weights(vgg16) is so big(540MB), It is not uploaded on the Github and you have to download it with the following code
-> !wget https://download.pytorch.org/models/vgg16_bn-6c64b313.pth
 
 ## Demo Video
 > [**Youtube Link**](https://youtu.be/fyVCOq6zjss)
