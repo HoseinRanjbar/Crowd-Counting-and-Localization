@@ -19,6 +19,9 @@ python dataset_preparation.py --application='make_list'\
     --groundtruth_txt_path $GT_PATH
 </pre>
 
+## Train
+
+
 ## Test
 
 A trained model on the MALL_DATASET, SHTechPartA&B, and JHU-CROWD++ datasets is available in the './weights' directory. To predict the locations of individuals in test images, please run the following commands:
