@@ -21,7 +21,31 @@ python dataset_preparation.py --application='make_list'\
 
 ## Train
 
+To train and funetune model, please run the following commands:
 
+<pre>
+python train.py --data_root $DATA_ROOT \
+    --dataset_file SHHA \
+    --epochs 100 \
+    --lr_drop 3500 \
+    --output_dir './logs' \
+    --checkpoints_dir './logs/checkpoint' \
+    --tensorboard_dir './logs' \
+    --frozen_weights './pretrained_model/best_mae.pth' \
+    --lr 0.00005 \
+    --lr_backbone 0.00001 \
+    --batch_size 8 \
+    --eval_freq 4 \
+    --gpu_id 0
+</pre>
+
+**data_root** : Train dataset root
+
+**output_dir** : Address to save the weights of the model
+
+**checkpoints_dir** : Address to save the checkpoint
+
+**frozen_weights** : Path to the pretrained model. If set, only the mask head will be trained
 ## Test
 
 A trained model on the MALL_DATASET, SHTechPartA&B, and JHU-CROWD++ datasets is available in the './weights' directory. To predict the locations of individuals in test images, please run the following commands:
