@@ -8,14 +8,23 @@ Existing localization-based methods relying on intermediate representations (i.e
 
 ## Preprocessing
 
+ShanghaiTech dataset need some preprocessing to ready for train. Images and groundtruths should prepaire to suitable format. To preprocess the dataset, please run the following commands:
 
+
+<pre>
+python dataset_preparation.py --application='make_list'\
+    --list_dir $DATA_DIR \
+    --groundtruth_dir  $GT_DIR \
+    --images_path $IMG_PATH \
+    --groundtruth_txt_path $GT_PATH
+</pre>
 
 ## Test
 
-A trained model on the MALL_DATASET, SHTechPartA, and JHU-CROWD++ datasets is available in the './weights' directory. To predict the locations of individuals in test images, please run the following commands:
+A trained model on the MALL_DATASET, SHTechPartA&B, and JHU-CROWD++ datasets is available in the './weights' directory. To predict the locations of individuals in test images, please run the following commands:
 
 <pre>
-!CUDA_VISIBLE_DEVICES=0 python test.py --threshold 0.8 \
+python test.py --threshold 0.8 \
     --images_path ./test_images \
     --weight_path  ./pretrained_model/best_mae.pth \
     --output_dir ./prediction/images/ \
@@ -48,7 +57,7 @@ There are sampels of predicting location of individuals in some test images.
 To extract heatmap, please run the following commands:
 
 <pre>
-!CUDA_VISIBLE_DEVICES=0 python density_map.py --images_path ./test_images \
+python density_map.py --images_path ./test_images \
     --points_path ./prediction/predict_txt.txt \
     --method  'fixed' \
     --output_dir ./heatmaps 
@@ -66,7 +75,18 @@ A sample of heatmap is provided in below:
   <img src="images/heatmap.png" width="1700">
 </p>
 
-## Demo Video
+## Crowd Counting on Video
+
+To predict the locations of individuals in a video, please run the following commands:
+
+<pre> 
+python video.py --threshold 0.65 \
+    --video_path $VIDEO_PATH \
+    --weight_path  ./pretrained_model/best_mae.pth \
+    --output_dir prediction/video.mp4
+</pre>
+
+# Demo Video
 > [**YouTube Link**](https://youtu.be/fyVCOq6zjss)
 > [![Watch the video](images/video_cover.png)](https://youtu.be/fyVCOq6zjss)
 
