@@ -12,11 +12,11 @@ A trained model on the MALL_DATASET, SHTechPartA, and JHU-CROWD++ datasets is av
 
 <pre>
 !CUDA_VISIBLE_DEVICES=0 python test.py --threshold 0.8 \
-    --images_path $IMAGE_ROOT \
+    --images_path ./test_images \
     --weight_path  ./pretrained_model/best_mae.pth \
-    --output_dir ./output/images/ \
-    --predicts_txt_dir ./output/predict_txt.txt \
-    --predicts_point_dir ./logs/new_thr=0.8
+    --output_dir ./prediction/images/ \
+    --predicts_txt_dir ./prediction/predict_txt.txt \
+    --predicts_point_dir ./prediction/new_thr=0.8
 </pre>
   
 **image_path** : test image folder address
@@ -44,8 +44,8 @@ There are sampels of predicting location of individuals in some test images.
 To extract heatmap, please run the following commands:
 
 <pre>
-!CUDA_VISIBLE_DEVICES=0 python density_map.py --images_path $IMG_PATH \
-    --points_path ./output/predict_txt.txt \
+!CUDA_VISIBLE_DEVICES=0 python density_map.py --images_path ./test_images \
+    --points_path ./prediction/predict_txt.txt \
     --method  'fixed' \
     --output_dir ./heatmaps 
 </pre>
@@ -63,7 +63,7 @@ A sample of heatmap is provided in below:
 </p>
 
 ## Demo Video
-> [**Youtube Link**](https://youtu.be/fyVCOq6zjss)
+> [**YouTube Link**](https://youtu.be/fyVCOq6zjss)
 > [![Watch the video](images/video_cover.png)](https://youtu.be/fyVCOq6zjss)
 
 
