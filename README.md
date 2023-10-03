@@ -27,8 +27,9 @@ A trained model on the MALL_DATASET, SHTechPartA, and JHU-CROWD++ datasets is av
 
 **predicted_txt_dir** : address of the text file that contains predicted nubmer of person in each image.
 
+## Visualization of Predictions
 
-## Visualized demos
+There are sampels of predicting location of individuals in some test images.
 
 <p align="center">
   <img src="images/img2.jpg" width="1000" >
