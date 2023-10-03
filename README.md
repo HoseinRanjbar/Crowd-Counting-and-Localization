@@ -39,6 +39,29 @@ There are sampels of predicting location of individuals in some test images.
   <img src="images/img3.jpg" width="1000">
 </p>
 
+## Heatmap
+
+To extract heatmap, please run the following commands:
+
+<pre>
+!CUDA_VISIBLE_DEVICES=0 python density_map.py --images_path $IMG_PATH \
+    --points_path ./output/predict_txt.txt \
+    --method  'fixed' \
+    --output_dir ./heatmaps 
+</pre>
+
+**images_path** : Test images path
+
+**point_path** : predicted coordinates of individual path
+
+**output_dir** : address to save  heatmaps
+
+A sample of heatmap is provided in below:
+
+<p align="center">
+  <img src="images/heatmap.jpg" width="1000">
+</p>
+
 Backbone weights(vgg16) is so big(540MB), It is not uploaded on the Github and you have to download it with the following code
 > !wget https://download.pytorch.org/models/vgg16_bn-6c64b313.pth
 
