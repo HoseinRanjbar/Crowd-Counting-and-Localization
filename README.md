@@ -59,7 +59,7 @@ To extract heatmap, please run the following commands:
 A sample of heatmap is provided in below:
 
 <p align="center">
-  <img src="images/heatmap.png" width="1200">
+  <img src="images/heatmap.png" width="1700">
 </p>
 
 ## Demo Video
