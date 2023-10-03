@@ -12,8 +12,7 @@ The overall architecture of the P2PNet. Built upon the VGG16, it firstly introdu
 Backbone weights(vgg16) is so big(540MB), It is not uploaded on the Github and you have to download it with the following code
 > !wget https://download.pytorch.org/models/vgg16_bn-6c64b313.pth
 >
-> dataset/thumbnail.png
-> [![Video Thumbnail](dataset/thumbnail.png)](https://vimeo.com/870562319?share=copy)
+> [Watch the Video](https://vimeo.com/870562319?share=copy)
 
 
 
