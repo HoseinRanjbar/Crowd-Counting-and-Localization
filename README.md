@@ -54,7 +54,7 @@ To extract heatmap, please run the following commands:
     --output_dir ./heatmaps 
 </pre>
 
-**images_path** : Test images path
+**images_path** : Test images path. 10 test images upload in **./test_images** 
 
 **point_path** : predicted coordinates of individual path
 
