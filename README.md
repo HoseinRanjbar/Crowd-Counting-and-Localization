@@ -29,13 +29,15 @@ A trained model on the MALL_DATASET, SHTechPartA, and JHU-CROWD++ datasets is av
 
 
 ## Visualized demos
-![](images/pred2.jpg)
+![](images/img1.jpg)
+
+![](images/img2.jpg)
 
 Backbone weights(vgg16) is so big(540MB), It is not uploaded on the Github and you have to download it with the following code
 > !wget https://download.pytorch.org/models/vgg16_bn-6c64b313.pth
 
 ## Demo Video
 > [**Youtube Link**](https://youtu.be/fyVCOq6zjss)
-> [![Watch the video](images/thumbnail.png)](https://youtu.be/fyVCOq6zjss)
+> [![Watch the video](images/video_cover.png)](https://youtu.be/fyVCOq6zjss)
 
 
