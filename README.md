@@ -2,13 +2,15 @@
 
 ### Introduction
 ---
+# Crowd Counting and Localization for Surveillance Videos
+
 This project implements a crowd counting method and is heavily inspired by the repository at [CrowdCounting-P2PNet](https://github.com/TencentYoutuResearch/CrowdCounting-P2PNet).
 
-Existing localization-based methods relying on intermediate representations (i.e., density maps or pseudo boxes) serving as learning targets are counter-intuitive and error-prone. We use a purely point-based framework for joint crowd counting and individual localization. In this framework, instead of merely reporting the absolute counting error at image level, we use a new metric, called density Normalized Average Precision (nAP), to provide more comprehensive and more precise performance evaluation. The overall architecture Built upon the VGG16, it firstly introduce an upsampling path to obtain fine-grained feature map. Then it exploits two branches to simultaneously predict a set of point proposals and their confidence scores.
+Existing localization-based methods relying on intermediate representations (i.e., density maps or pseudo-boxes) serving as learning targets are counter-intuitive and error-prone. We use a purely point-based framework for joint crowd counting and individual localization. In this framework, instead of merely reporting the absolute counting error at the image level, we use a new metric called density normalized average precision (nAP) to provide a more comprehensive and precise performance evaluation. The overall architecture is built upon the VGG16; it first introduces an upsampling path to obtain a fine-grained feature map. Then it exploits two branches to simultaneously predict a set of point proposals and their confidence scores.
 
 ## Preprocessing
 
-ShanghaiTech dataset need some preprocessing to ready for train. Images and groundtruths should prepaire to suitable format. To preprocess the dataset, please run the following commands:
+The ShanghaiTech dataset needs some preprocessing to be ready for training. Images and ground truth should be prepared in a suitable format. To preprocess the dataset, please run the following commands:
 
 
 <pre>
@@ -21,7 +23,7 @@ python dataset_preparation.py --application='make_list'\
 
 ## Train
 
-To train and funetune model, please run the following commands:
+To train and fine-tune the model, please run the following commands:
 
 <pre>
 python train.py --data_root $DATA_ROOT \
@@ -45,7 +47,7 @@ python train.py --data_root $DATA_ROOT \
 
 **checkpoints_dir** : Address to save the checkpoint
 
-**frozen_weights** : Path to the pretrained model. If set, only the mask head will be trained
+**frozen_weights** : Path to the pre-trained model. If set, only the mask head will be trained.
 ## Test
 
 A trained model on the MALL_DATASET, SHTechPartA&B, and JHU-CROWD++ datasets is available in the './weights' directory. To predict the locations of individuals in test images, please run the following commands:
@@ -65,11 +67,11 @@ python test.py --threshold 0.8 \
 
 **output_dir** : predicted images adress
 
-**predicted_txt_dir** : address of the text file that contains predicted nubmer of person in each image.
+**predicted_txt_dir** : Address of the text file that contains the predicted number of individuals in each image.
 
 ## Visualization of Predictions
 
-There are sampels of predicting location of individuals in some test images.
+There are examples of predicting the location of individuals in some test images.
 
 <p align="center">
   <img src="images/img2.jpg" width="1000" >
@@ -81,7 +83,7 @@ There are sampels of predicting location of individuals in some test images.
 
 ## Heatmap
 
-To extract heatmap, please run the following commands:
+To extract the heatmap, please run the following commands:
 
 <pre>
 python density_map.py --images_path ./test_images \
@@ -90,13 +92,13 @@ python density_map.py --images_path ./test_images \
     --output_dir ./heatmaps 
 </pre>
 
-**images_path** : Test images path. 10 test images upload in **./test_images** 
+**images_path** : Test image path. 10 test images are uploaded in **./test_images** 
 
 **point_path** : predicted coordinates of individual path
 
-**output_dir** : address to save  heatmaps
+**output_dir** : address to save heatmaps
 
-A sample of heatmap is provided in below:
+A sample of the heatmap is provided below:
 
 <p align="center">
   <img src="images/heatmap.png" width="1700">
