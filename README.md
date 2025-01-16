@@ -116,7 +116,7 @@ python video.py --threshold 0.65 \
 </pre>
 
 # Demo Video
-> [**YouTube Link**](https://youtu.be/fyVCOq6zjss)
-> [![Watch the video](images/video_cover.png)](https://youtu.be/fyVCOq6zjss)
+
+[Watch the video](https://github.com/user-attachments/assets/4e5fa214-d044-48ce-ac79-4015e32fee62)
 
 
